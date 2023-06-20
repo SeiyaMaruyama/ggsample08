@@ -33,5 +33,5 @@ void main(void)
   vec4 idiff = max(dot(nn, nl), 0.0) * kdiff * ldiff;
   vec4 ispec = pow(max(dot(nn, nh), 0.0), kshi) * kspec * lspec;
 
-  fc = iamb + idiff + ispec;
+  fc = texture(color, tc) * (iamb + idiff) + ispec;
 }
